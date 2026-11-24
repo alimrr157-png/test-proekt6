@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Works</title>
+    <style>
+        .parent-block {
+            position: relative;
+            width: 350px;
+            height: 80px;
+            border: 1px solid #000;
+            margin-top: 20px;
+        }
+        .small-block {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="gmail_input" placeholder="Введите @gmail.com">
+        <button type="button" id="gmail_button">Проверить</button>
+        <span id="gmail_result"></span>
+    </div>
+
+    <div class="parent-block">
+        <div class="small-block"></div>
+    </div>
+
+    <script src="./home_works.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Форма POST — JSON и FormData</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 460px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .field {
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .checkbox-field {
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+    }
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    button {
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    #statusMessage {
+      margin-top: 14px;
+      font-weight: bold;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h2>Регистрация / отправка формы</h2>
+
+  <form id="userForm" novalidate>
+    <div class="field">
+      <label for="nameInput">Имя (name):</label>
+      <input type="text" id="nameInput" name="name" placeholder="Введите имя" required />
+    </div>
+
+    <div class="field">
+      <label for="emailInput">Email:</label>
+      <input type="email" id="emailInput" name="email" placeholder="example@mail.com" required />
+    </div>
+
+    <div class="field">
+      <label for="passwordInput">Пароль (password):</label>
+      <input type="password" id="passwordInput" name="password" placeholder="Минимум 6 символов" required />
+    </div>
+
+    <div class="field">
+      <label for="ageInput">Возраст (age):</label>
+      <input type="number" id="ageInput" name="age" min="1" max="120" placeholder="Возраст" required />
+    </div>
+
+    <div class="field">
+      <label for="genderSelect">Пол (gender):</label>
+      <select id="genderSelect" name="gender" required>
+        <option value="">Выберите пол</option>
+        <option value="male">Мужской</option>
+        <option value="female">Женский</option>
+      </select>
+    </div>
+
+    <div class="field checkbox-field">
+      <input type="checkbox" id="agreementCheckbox" name="agreement" />
+      <label for="agreementCheckbox">Согласен на обработку персональных данных</label>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" id="sendJsonBtn" data-mode="json">
+        Отправить как JSON
+      </button>
+      <button type="button" id="sendFormDataBtn" data-mode="formdata">
+        Отправить как FormData
+      </button>
+    </div>
+  </form>
+
+  <p id="statusMessage"></p>
+  <pre id="responseOutput"></pre>
+
+  <script src="./homeworks.js"></script>
+</body>
+</html>
